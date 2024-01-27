@@ -19,7 +19,7 @@ function POSPage() {
 
   const fetchProducts = async() => {
     setIsLoading(true);
-    const result = await axios.get('products');
+    const result = await axios.get('${process.env.REACT_APP_API_URL}/products');
     setProducts(await result.data);
     setIsLoading(false);
   }
